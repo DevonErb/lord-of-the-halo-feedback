@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        **This report will be public.** Search existing issues first. Review pasted output and attachments; remove personal details, tokens, and private paths. Website reports remain private unless a reviewed summary is published manually.
+        **This report will be public.** Search existing issues first. Review pasted output and attachments; remove personal details, tokens, and private paths. New reports from the connected website form are public after explicit consent. Earlier private reports stay private.
   - type: dropdown
     id: platform
     attributes:
@@ -57,29 +57,15 @@ body:
       value: |
         ### Optional system information
 
-        You can enter your OS, CPU, RAM, graphics card, and graphics driver manually. For a Windows build running through Proton, include the Proton version if known.
+        Include only OS family/version, CPU model, RAM amount, graphics card model and driver version if useful. Do not paste raw diagnostic dumps, hostnames, account names, serials, network addresses or file paths.
 
-        Alternatively, run the relevant command on your gaming computer and review the output before pasting it below. These commands do not submit anything. No administrator access is needed.
+        The connected website form validates and previews these fields before sending. This direct GitHub form cannot run those checks; omit system information if you are unsure.
 
-        **Linux / SteamOS:** run in a terminal without sudo. If `inxi` is unavailable, enter the details manually.
-
-        ```sh
-        inxi -SCGI -z -c 0
-        ```
-
-        **Windows:** run these lines in PowerShell. Only the listed properties are requested.
-
-        ```powershell
-        Get-CimInstance Win32_OperatingSystem | Format-List Caption,Version,BuildNumber,OSArchitecture
-        Get-CimInstance Win32_Processor | Format-List Name,NumberOfCores,NumberOfLogicalProcessors
-        Get-CimInstance Win32_ComputerSystem | Select-Object @{Name="RAM_GiB";Expression={[math]::Round($_.TotalPhysicalMemory / 1GB,1)}} | Format-List
-        Get-CimInstance Win32_VideoController | Format-List Name,DriverVersion
-        ```
   - type: textarea
     id: system-info
     attributes:
       label: Reviewed system information (optional)
-      description: Paste only information you are comfortable publishing. Check the output even when a command filters identifying fields.
+      description: Only OS/version, CPU model, RAM, GPU model and driver. No raw system logs or identifying details.
       render: text
   - type: textarea
     id: additional-context
