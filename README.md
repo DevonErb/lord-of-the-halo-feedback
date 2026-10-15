@@ -10,7 +10,11 @@ This is the public bug tracker for **Lord of the Halo**, by Devon Erb / Tripple 
 
 **Issues here are public.** Review anything you paste or attach, and remove personal details, access tokens, private paths, and other information you do not want published.
 
-Website bug reports are collected privately. Reviewed summaries may be published here manually; full website reports are not automatically forwarded to this public repository. Do not paste someone else's private report here.
+The connected website feedback form publishes new reports here after explicit public-posting consent. The in-game **Report a bug** button opens that form with game platform and version filled in. Previously collected private reports stay private.
+
+PC information is optional. The website accepts a checked OS/hardware summary and shows exactly what will be sent. It does not automatically upload logs, account names, computer names, serial numbers, network addresses or file paths. Do not put personal information in report descriptions or attachments.
+
+Website integration is currently running in the local demo preview; production Cloudflare deployment is still pending. Direct reports through this repository are available now.
 
 ## Official links
 
