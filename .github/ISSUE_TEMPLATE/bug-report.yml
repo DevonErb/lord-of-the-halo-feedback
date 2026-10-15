@@ -1,0 +1,88 @@
+name: Bug report
+description: Report a problem with Lord of the Halo.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This report will be public.** Search existing issues first. Review pasted output and attachments; remove personal details, tokens, and private paths. Website reports remain private unless a reviewed summary is published manually.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Choose the system or compatibility setup used to play the game.
+      options:
+        - Linux
+        - Windows
+        - Steam Deck
+        - Windows build via Proton
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Game version
+      description: Copy the version shown in the game, including the build label if available.
+      placeholder: "Version or build label"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the game mode, location, and whether the problem happens every time.
+      placeholder: |
+        1. Start ...
+        2. Choose ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Include any visible error message.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ### Optional system information
+
+        You can enter your OS, CPU, RAM, graphics card, and graphics driver manually. For a Windows build running through Proton, include the Proton version if known.
+
+        Alternatively, run the relevant command on your gaming computer and review the output before pasting it below. These commands do not submit anything. No administrator access is needed.
+
+        **Linux / SteamOS:** run in a terminal without sudo. If `inxi` is unavailable, enter the details manually.
+
+        ```sh
+        inxi -SCGI -z -c 0
+        ```
+
+        **Windows:** run these lines in PowerShell. Only the listed properties are requested.
+
+        ```powershell
+        Get-CimInstance Win32_OperatingSystem | Format-List Caption,Version,BuildNumber,OSArchitecture
+        Get-CimInstance Win32_Processor | Format-List Name,NumberOfCores,NumberOfLogicalProcessors
+        Get-CimInstance Win32_ComputerSystem | Select-Object @{Name="RAM_GiB";Expression={[math]::Round($_.TotalPhysicalMemory / 1GB,1)}} | Format-List
+        Get-CimInstance Win32_VideoController | Format-List Name,DriverVersion
+        ```
+  - type: textarea
+    id: system-info
+    attributes:
+      label: Reviewed system information (optional)
+      description: Paste only information you are comfortable publishing. Check the output even when a command filters identifying fields.
+      render: text
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context (optional)
+      description: Include relevant screenshots or other details after reviewing them for private information.
