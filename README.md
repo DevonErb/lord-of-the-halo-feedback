@@ -4,7 +4,7 @@ This is the public bug tracker for **Lord of the Halo**, by Devon Erb / Tripple 
 
 ## Report a problem
 
-1. [Search existing issues](https://github.com/DevonErb/lord-of-the-halo-feedback/issues) and check the pinned known-issues post.
+1. [Search existing issues](https://github.com/DevonErb/lord-of-the-halo-feedback/issues) and check the [pinned known-issues post](https://github.com/DevonErb/lord-of-the-halo-feedback/issues/1).
 2. If your problem is not already reported, [open a bug report](https://github.com/DevonErb/lord-of-the-halo-feedback/issues/new?template=bug-report.yml).
 3. Include the game version, platform, steps to reproduce, expected behavior, and what actually happened. System information is optional.
 
